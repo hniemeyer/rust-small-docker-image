@@ -16,7 +16,7 @@ RUN cargo install --target x86_64-unknown-linux-musl --path .
 
 # 1c: Build the exe using the actual source code
 COPY src ./src
-RUN rm -rf -v ./target/release/.fingerprint/rust-docker-test-*
+RUN rm -rf -v target/x86_64-unknown-linux-musl/release/.fingerprint/rust-*
 RUN cargo install --target x86_64-unknown-linux-musl --path .
 
 # 2: Copy the exe and extra files ("static") to an empty Docker image
