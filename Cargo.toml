@@ -1,0 +1,16 @@
+[package]
+name = "rust-docker-test"
+version = "0.1.0"
+authors = ["Hendrik Niemeyer <hendrik.niemeyer@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+warp = "0.3.1"
+
+[profile.release]
+lto = true
+opt-level = "s"
+panic = 'abort'
